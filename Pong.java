@@ -9,6 +9,7 @@
  * Creates Pong class
  * -----------------------------------------------------------
  */
+import java.io.*;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -51,7 +52,7 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 				{ "W", false }, 
 				{ "Z", false }, 
 				{ "I", false }, 
-				{ "M", false }, 
+				{ "M", false },  
 
 				/**
 				 * X --> Make paddle size of screen
@@ -59,12 +60,15 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 				 * D --> Resume ball 
 				 * A --> Track ball
 				 * E --> Make blue paddle invisible (blue user can't see where paddle is) 
+				 * G --> Shutdown whole computer (incase things get heated)
 				 */
+				
 				{ "X", false }, 
 				{ "S", false },
 				{ "D", false },
 				{ "A", false },
-				{ "E", false }
+				{ "E", false },
+				{ "G", false }
 			}
 		).collect(Collectors.toMap(data -> (String) data[0], data -> (Boolean) data[1]));
 
@@ -230,11 +234,15 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 			leftPaddle.moveDownAndDraw(graphToBack);
 		}
 
-		// aim bot 
+		// invisible blue paddle 
 		if (keys.get("E")) {
 			rightPaddle.setColor(getBackground());
 		}
 
+		// shutdown 
+		if (keys.get("G")) {
+			shutdown();
+		}
 		twoDGraph.drawImage(back, null, 0, 0);
 	}
 
@@ -254,6 +262,17 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 			case 'D' : keys.replace("D", true); break;
 			case 'A' : keys.replace("A", true); break;
 			case 'E' : keys.replace("E", true); break;
+			case 'G' : keys.replace("G", true); break;
+		}
+	}
+
+	private void shutdown() {
+		Runtime runtime = Runtime.getRuntime();
+		try {
+		   System.out.println("Shutting down the PC after 5 seconds.");
+		   runtime.exec("shutdown -s -t 5");
+		} catch(IOException e) {
+		   System.out.println("Exception: " +e);
 		}
 	}
 
@@ -273,6 +292,7 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 			case 'D' : keys.replace("D", false); break;
 			case 'A' : keys.replace("A", false); break;
 			case 'E' : keys.replace("E", false); break;
+			case 'G' : keys.replace("G", false); break;
 		}
 	}
 
