@@ -188,9 +188,6 @@ public class Block implements Locatable {
          Integer.toString(block.getWidth()),
          Integer.toString(block.getHeight())
       );
-      HashSet<String> set = new HashSet<String>(attributes);
-      System.out.println(attributes);
-      System.out.println(set);
 
       return new HashSet<String>(attributes).size()<=5;
 	}   
@@ -199,7 +196,8 @@ public class Block implements Locatable {
     * returns string when object printed
     */
    public String toString() {
-      String out = "X::"+getX()+"\nY::"+getY()+"\nW::"+getWidth()+"\nH::"+getHeight()+"\nC::"+getColor()+"\n";
+      // x::y::w::h::c
+      String out = getX()+"::"+getY()+"::"+getWidth()+"::"+getHeight()+"::"+getColor()+"\n";
       return out;
    }
 }
