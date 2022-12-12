@@ -7,7 +7,7 @@
  * Merged version of Tester.java and BlockTestOne.java
  * For running tests in IDEs that require Main.java (Repl)
  * -----------------------------------------------------------
- * Creates BlockTestOne class
+ * Runs Pong game files
  * -----------------------------------------------------------
  */
 import java.awt.Color;
