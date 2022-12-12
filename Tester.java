@@ -31,7 +31,7 @@ public class Tester extends JFrame {
 		/**
 		 * Future tests
 		 */
-		//getContentPane().add(new BallTestTwo());
+		// getContentPane().add(new BallTestTwo());
 
 		//PaddleTestTwo padTest = new PaddleTestTwo();
 		//((Component)padTest).setFocusable(true);
@@ -44,7 +44,7 @@ public class Tester extends JFrame {
 	 * main method ==> test BlockTest2
 	 * @param args
 	 */
-	public static void main(String args[]) {
-		Tester run = new Tester();
-	}
+	// public static void main(String args[]) {
+	// 	Tester run = new Tester();
+	// }
 }
