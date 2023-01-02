@@ -15,47 +15,36 @@ import java.awt.Color;
 public class Main {
     public static void main(String [] args) {
         // ========================================================================//
-        // Block Test 1
-        // testing Block.toString and Block.equals()
+        // BALL Test 1
+        // testing Ball constructors and equals()
         // ========================================================================//
-        /**
-		 * one
-		 * no arguments
-		 */
-		Block one = new Block();
+        Ball one = new Ball();
 		System.out.println(one);
-
-		/**
-		 * two
-		 * no color
-		 */
-		Block two = new Block(50, 50, 30 ,30);
+		
+		Ball two = new Ball(100,90);
 		System.out.println(two);
-
-		/**
-		 * three
-		 * all arguments
-		 */
-		Block three = new Block(350, 350, 15, 15, Color.RED);
+		
+		Ball three = new Ball(100,100,30,50);
 		System.out.println(three);
-
-		/**
-		 * four
-		 * all arguments
-		 */
-		Block four = new Block(450, 50, 20, 60, Color.GREEN);
+		
+		Ball four = new Ball(100,100,30,50,Color.BLUE);
 		System.out.println(four);
 		
-		/**
-		 * equals method tester
-		 */
-		System.out.println(one.equals(two)); // false
-		System.out.println(one.equals(one)); // true
+		Ball five = new Ball(100,100,30,50,Color.BLUE,5,6);
+		System.out.println(five);
+		
+		Ball six = new Ball(100,100,30,50,Color.blue,5,6);
+		System.out.println(six);		
+		
+		System.out.println(five.equals(four));		
+		
+		System.out.println(five.equals(five));										
 
         // ========================================================================//
-        // Block Test 2
-        // testing Block.draw() 
+        // Ball Test 2
+        // testing run()
         // ========================================================================//
-        Tester run = new Tester();
+        BallTestTwo test = new BallTestTwo();
+		test.run();
     }
 }

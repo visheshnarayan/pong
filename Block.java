@@ -176,28 +176,15 @@ public class Block implements Locatable {
     * @return
     */
 	public boolean equals(Block block) {
-      List<String> attributes = Arrays.asList(
-         getColor().toString(),
-         Integer.toString(this.xPos),
-         Integer.toString(this.yPos),
-         Integer.toString(this.width),
-         Integer.toString(this.height),
-         block.getColor().toString(),
-         Integer.toString(block.getX()),
-         Integer.toString(block.getY()),
-         Integer.toString(block.getWidth()),
-         Integer.toString(block.getHeight())
-      );
-
-      return new HashSet<String>(attributes).size()<=5;
-	}   
+      return block.toString().equals(toString());
+	}
 
    /**
     * returns string when object printed
     */
    public String toString() {
       // x::y::w::h::c
-      String out = getX()+"::"+getY()+"::"+getWidth()+"::"+getHeight()+"::"+getColor()+"\n";
+      String out = getX()+"::"+getY()+"::"+getWidth()+"::"+getHeight()+"::"+getColor();
       return out;
    }
 }
