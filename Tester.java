@@ -31,7 +31,7 @@ public class Tester extends JFrame {
 		/**
 		 * Future tests
 		 */
-		// getContentPane().add(new BallTestTwo());
+		getContentPane().add(new BallTestTwo());
 
 		//PaddleTestTwo padTest = new PaddleTestTwo();
 		//((Component)padTest).setFocusable(true);

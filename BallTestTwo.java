@@ -54,8 +54,8 @@ class BallTestTwo extends Canvas implements Runnable {
 		ball = new Ball(100,100,30,50,Color.BLUE);
 		ball = new Ball(100,100,30,50,Color.BLUE,5,6);
 
-		// revert back to original 
-		ball = new Ball();
+		// change to testing ball
+		ball = new Ball(100,100,30,50,Color.BLUE,5,6);
 
 		// start thread
 		new Thread(this).start();

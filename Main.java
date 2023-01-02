@@ -44,7 +44,6 @@ public class Main {
         // Ball Test 2
         // testing run()
         // ========================================================================//
-        BallTestTwo test = new BallTestTwo();
-		test.run();
+        Tester test = new Tester();
     }
 }
