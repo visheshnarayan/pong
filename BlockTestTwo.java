@@ -22,7 +22,7 @@ public class BlockTestTwo extends Canvas
 	 * Constructor
 	 */
 	public BlockTestTwo() {
-		setBackground(Color.WHITE);
+		setBackground(Color.BLACK);
 	}
 
 	/**

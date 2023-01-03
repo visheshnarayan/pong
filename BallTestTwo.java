@@ -11,10 +11,7 @@
  */
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.Canvas;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 class BallTestTwo extends Canvas implements Runnable {
 	/**
@@ -27,7 +24,7 @@ class BallTestTwo extends Canvas implements Runnable {
 	 */
 	public BallTestTwo() {
 		// create canvas
-		setBackground(Color.WHITE);
+		setBackground(Color.BLACK);
 		setVisible(true);
 
 		// new Ball
@@ -55,9 +52,9 @@ class BallTestTwo extends Canvas implements Runnable {
 		ball = new Ball(100,100,30,50,Color.BLUE,5,6);
 
 		// change to testing ball
-		ball = new Ball(100,100,30,50,Color.BLUE,5,6);
+		ball = new Ball();
 
-		// start thread
+		// start thread ==> used as timer for movement loop
 		new Thread(this).start();
 	}
 	
@@ -74,26 +71,29 @@ class BallTestTwo extends Canvas implements Runnable {
 	public void paint(Graphics window) {
 		ball.moveAndDraw(window);
 
-		if(!(ball.getX()>=10 && ball.getX()<=550))
-		{
+		// if ball out of bounds ==> flip speed
+		if(!(ball.getX()>=10 && ball.getX()<=550)) {
 			ball.setXSpeed(-ball.getXSpeed());
 		}
 
-		if(!(ball.getY()>=10 && ball.getY()<=450))
-		{
+		if(!(ball.getY()>=10 && ball.getY()<=450)) {
 			ball.setYSpeed(-ball.getYSpeed());
 		}
 	}
 	
 	/**
-	 * runs Thread
+	 * runs tester
 	 */
 	public void run() {
+		// error handling
    		try {
    			while(true) {
-				Thread.currentThread().sleep(19);
+				// pause thread and update (repaint)
+				Thread.sleep(19);
 				repaint();
          	}	
-      } catch(Exception e) {System.out.println("Thread failed at "+Thread.currentThread().getState());}
+      	} catch(Exception e) {
+			System.out.println("Thread failed at "+Thread.currentThread().getState());
+		}
   	}	
 }

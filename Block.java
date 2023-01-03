@@ -11,9 +11,6 @@
  */
 import java.awt.Color;
 import java.awt.Graphics;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Arrays;
 
 public class Block implements Locatable {
    /**

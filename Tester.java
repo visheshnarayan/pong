@@ -11,7 +11,6 @@
  */
  
 import javax.swing.JFrame;
-import java.awt.Component;
 
 public class Tester extends JFrame {
 	/**
@@ -27,21 +26,20 @@ public class Tester extends JFrame {
 		super("PONG TESTER");
 		setSize(WIDTH,HEIGHT);
 		getContentPane().add(new BlockTestTwo());
-
-		/**
-		 * Future tests
-		 */
 		getContentPane().add(new BallTestTwo());
 
-		//PaddleTestTwo padTest = new PaddleTestTwo();
-		//((Component)padTest).setFocusable(true);
-		//getContentPane().add(padTest);
+		// ====================================== Future Tests ====================================== // 
+		// PaddleTestTwo padTest = new PaddleTestTwo();
+		// ((Component)padTest).setFocusable(true);
+		// getContentPane().add(padTest);
+		// ========================================================================================== //
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
 	/**
 	 * main method ==> test BlockTest2
+	 * NOW IN MAIN.JAVA
 	 * @param args
 	 */
 	// public static void main(String args[]) {
