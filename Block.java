@@ -29,27 +29,43 @@ public class Block implements Locatable {
     * No Color --> defaults to white
     */
 	public Block() {
-      xPos = 10;
-      yPos = 20;
-      width = 30;
-      height = 40;
-      color = Color.WHITE;
+      setX(10);
+      setY(20);
+      setWidth(30);
+      setHeight(40);
+      setColor(Color.WHITE);
 	}
 
+	public Block(int xPos, int yPos) {
+      setX(xPos);
+      setY(yPos);
+      setWidth(30);
+      setHeight(40);
+      setColor(Color.WHITE);
+	}
+
+	public Block(int xPos, int yPos, int width) {
+      setX(xPos);
+      setY(yPos);
+      setWidth(width);
+      setHeight(40);
+      setColor(Color.WHITE);
+   }
+
 	public Block(int xPos, int yPos, int width, int height) {
-      this.xPos = xPos;
-      this.yPos = yPos;
-      this.width = width;
-      this.height = height;
-      this.color = Color.WHITE;
+      setX(xPos);
+      setY(yPos);
+      setWidth(width);
+      setHeight(height);
+      setColor(Color.WHITE);
    }
    
 	public Block(int xPos, int yPos, int width, int height, Color color) {
-      this.xPos = xPos;
-      this.yPos = yPos;
-      this.width = width;
-      this.height = height;
-      this.color = color;
+      setX(xPos);
+      setY(yPos);
+      setWidth(width);
+      setHeight(height);
+      setColor(color);
    }
 
    /**
@@ -125,8 +141,8 @@ public class Block implements Locatable {
     * @param yPos
     */
    public void setPos(int xPos, int yPos) {
-      this.xPos = xPos;
-      this.yPos = yPos;
+      setX(xPos);
+      setY(yPos);
    }
 
    /**

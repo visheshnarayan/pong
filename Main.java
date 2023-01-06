@@ -15,33 +15,29 @@ import java.awt.Color;
 public class Main {
     public static void main(String [] args) {
         // ========================================================================//
-        // BALL Test 1
-        // testing Ball constructors and equals()
+        // Paddle Test 1
+        // testing Paddle constructors and equals()
         // ========================================================================//
-        Ball one = new Ball();
+        Paddle one = new Paddle();
 		System.out.println(one);
 		
-		Ball two = new Ball(100,90);
+		Paddle two = new Paddle(100, 90);
 		System.out.println(two);
 		
-		Ball three = new Ball(100,100,30,50);
+		Paddle three = new Paddle(100, 100, 30);
 		System.out.println(three);
 		
-		Ball four = new Ball(100,100,30,50,Color.BLUE);
+		Paddle four = new Paddle(100, 100, 30, 50, 8);
 		System.out.println(four);
 		
-		Ball five = new Ball(100,100,30,50,Color.BLUE,5,6);
+		Paddle five = new Paddle(100, 100, 30, 20, Color.GREEN, 6);
 		System.out.println(five);
 		
-		Ball six = new Ball(100,100,30,50,Color.blue,5,6);
-		System.out.println(six);		
-		
 		System.out.println(five.equals(four));		
-		
-		System.out.println(five.equals(five));										
+		System.out.println(five.equals(five));					
 
         // ========================================================================//
-        // Ball Test 2
+        // Paddle Test 2
         // testing run()
         // ========================================================================//
         new Tester();

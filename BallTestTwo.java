@@ -72,7 +72,7 @@ class BallTestTwo extends Canvas implements Runnable {
 		ball.moveAndDraw(window);
 
 		// if ball out of bounds ==> flip speed
-		if(!(ball.getX()>=10 && ball.getX()<=550)) {
+		if(!(ball.getX()>=10 && ball.getX()<=790)) {
 			ball.setXSpeed(-ball.getXSpeed());
 		}
 

@@ -15,8 +15,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Canvas;
 
-public class BlockTestTwo extends Canvas
-{
+public class BlockTestTwo extends Canvas {
 
 	/**
 	 * Constructor

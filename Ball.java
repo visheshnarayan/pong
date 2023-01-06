@@ -93,15 +93,16 @@ public class Ball extends Block {
 	 */
 	public void moveAndDraw(Graphics window) {
 		// draw ball at old loc 
-		draw(window, Color.RED);
+		draw(window, getColor());
 		draw(window, Color.BLACK);
 
 		// update loc
-		setX(getX()+xSpeed);
-		setY(getY()+ySpeed);
+		setPos(getX()+xSpeed, getY()+ySpeed);
+		// setX(getX()+xSpeed);
+		// setY(getY()+ySpeed);
 
 		// draw ball at new loc
-		draw(window, Color.RED);
+		draw(window, getColor());
 	}
    
 	/**
