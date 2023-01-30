@@ -94,7 +94,7 @@ public class Ball extends Block implements Collidable {
 
 	// did ball collide right side
 	public boolean didCollideRight(Object obj) {
-		return getX()>=780;
+		return getX()>=750;
 	}
 
 	public boolean didCollideTop(Object obj) {

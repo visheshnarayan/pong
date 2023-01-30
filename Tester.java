@@ -16,8 +16,8 @@ public class Tester extends JFrame {
 	/**
 	 * private vars
 	 */
-	private static final int WIDTH = 800;
-	private static final int HEIGHT = 600;
+	private static final int WIDTH = 775;
+	private static final int HEIGHT = 500;
 
 	/**
 	 * Constructor

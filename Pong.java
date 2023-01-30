@@ -107,7 +107,7 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 				right+=1;
 			} else {
 				System.out.println("Left scores!");
-				turn = false;
+				turn = true;
 				left+=1;
 			}
 			System.out.println("\nLeft: " + left + "\nRight: " + right + "\n");
