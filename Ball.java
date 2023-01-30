@@ -12,7 +12,7 @@
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class Ball extends Block {
+public class Ball extends Block implements Collidable {
 	/**
 	 * private vars
 	 */
@@ -86,6 +86,24 @@ public class Ball extends Block {
 	public void setYSpeed(int ySpeed) {
 		this.ySpeed = ySpeed;
 	}
+
+	// did ball collide left side
+	public boolean didCollideLeft(Object obj) {
+		return getX()<=10;
+	}
+
+	// did ball collide right side
+	public boolean didCollideRight(Object obj) {
+		return getX()>=780;
+	}
+
+	public boolean didCollideTop(Object obj) {
+		return getY()<=10;
+	}
+
+	public boolean didCollideBottom(Object obj) {
+		return getY()>=450;
+	}
 	
 	/**
 	 * displays ball movement
@@ -98,8 +116,6 @@ public class Ball extends Block {
 
 		// update loc
 		setPos(getX()+xSpeed, getY()+ySpeed);
-		// setX(getX()+xSpeed);
-		// setY(getY()+ySpeed);
 
 		// draw ball at new loc
 		draw(window, getColor());

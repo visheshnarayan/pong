@@ -66,8 +66,7 @@ public class PaddleTestTwo extends Canvas implements KeyListener, Runnable {
 	/**
 	 * draws objects in game
 	 */
-	public void paint(Graphics window)
-	{
+	public void paint(Graphics window) {
 		ball.moveAndDraw(window);
 		leftPaddle.draw(window);
 

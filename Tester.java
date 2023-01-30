@@ -25,11 +25,14 @@ public class Tester extends JFrame {
 	public Tester() {
 		super("PONG TESTER");
 		setSize(WIDTH,HEIGHT);
-		getContentPane().add(new BlockTestTwo());
-		getContentPane().add(new BallTestTwo());
-		PaddleTestTwo padTest = new PaddleTestTwo();
-		getContentPane().add(padTest);
-		padTest.setFocusable(true);
+		// getContentPane().add(new BlockTestTwo());
+		// getContentPane().add(new BallTestTwo());
+		Pong pong = new Pong();
+		getContentPane().add(pong);
+		pong.setFocusable(true);
+		// PaddleTestTwo padTest = new PaddleTestTwo();
+		// getContentPane().add(padTest);
+		// padTest.setFocusable(true);
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
