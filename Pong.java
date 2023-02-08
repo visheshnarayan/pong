@@ -57,10 +57,12 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 				 * X --> Make paddle size of screen
 				 * S --> Stop the ball in air
 				 * D --> Resume ball 
+				 * A --> Track ball 
 				 */
 				{ "X", false }, 
 				{ "S", false },
-				{ "D", false }
+				{ "D", false },
+				{ "A", false }
 			}
 		).collect(Collectors.toMap(data -> (String) data[0], data -> (Boolean) data[1]));
 
@@ -197,16 +199,31 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 			rightPaddle.moveDownAndDraw(graphToBack);
 		}
 
-		// if (keys.get("X")) {
-		// 	leftPaddle.moveDownAndDraw(graphToBack);
-		// }
+		// left paddle cheats
+
+		// make paddle size of screen
+		if (keys.get("X")) {
+			leftPaddle.setWidth(30);
+			leftPaddle.setHeight(450);
+			leftPaddle.setPos(0, 0);
+			leftPaddle.moveDownAndDraw(graphToBack);
+		}
+
+		// stop ball
 		if (keys.get("S")) {
 			ball.setXSpeed(0);
 			ball.setYSpeed(0);
 		}
+
+		// resume ball at high speed towards blue
 		if (keys.get("D")) {
 			ball.setXSpeed(10);
 			ball.setYSpeed(10);
+		}
+
+		// aim bot 
+		if (keys.get("A")) {
+			leftPaddle.setY(ball.getY());
 		}
 
 		twoDGraph.drawImage(back, null, 0, 0);
@@ -226,6 +243,7 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 			case 'X' : keys.replace("X", true); break;
 			case 'S' : keys.replace("S", true); break;
 			case 'D' : keys.replace("D", true); break;
+			case 'A' : keys.replace("A", true); break;
 		}
 	}
 
@@ -243,6 +261,7 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 			case 'X' : keys.replace("X", false); break;
 			case 'S' : keys.replace("S", false); break;
 			case 'D' : keys.replace("D", false); break;
+			case 'A' : keys.replace("A", false); break;
 		}
 	}
 
