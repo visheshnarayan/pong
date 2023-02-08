@@ -52,6 +52,15 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 				{ "Z", false }, 
 				{ "I", false }, 
 				{ "M", false }, 
+
+				/**
+				 * X --> Make paddle size of screen
+				 * S --> Stop the ball in air
+				 * D --> Resume ball 
+				 */
+				{ "X", false }, 
+				{ "S", false },
+				{ "D", false }
 			}
 		).collect(Collectors.toMap(data -> (String) data[0], data -> (Boolean) data[1]));
 
@@ -188,6 +197,18 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 			rightPaddle.moveDownAndDraw(graphToBack);
 		}
 
+		// if (keys.get("X")) {
+		// 	leftPaddle.moveDownAndDraw(graphToBack);
+		// }
+		if (keys.get("S")) {
+			ball.setXSpeed(0);
+			ball.setYSpeed(0);
+		}
+		if (keys.get("D")) {
+			ball.setXSpeed(10);
+			ball.setYSpeed(10);
+		}
+
 		twoDGraph.drawImage(back, null, 0, 0);
 	}
 
@@ -200,6 +221,11 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 			case 'Z' : keys.replace("Z", true); break;
 			case 'I' : keys.replace("I", true); break;
 			case 'M' : keys.replace("M", true); break;
+
+			// cheats
+			case 'X' : keys.replace("X", true); break;
+			case 'S' : keys.replace("S", true); break;
+			case 'D' : keys.replace("D", true); break;
 		}
 	}
 
@@ -212,6 +238,11 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 			case 'Z' : keys.replace("Z", false); break;
 			case 'I' : keys.replace("I", false); break;
 			case 'M' : keys.replace("M", false); break;
+
+			// cheats
+			case 'X' : keys.replace("X", false); break;
+			case 'S' : keys.replace("S", false); break;
+			case 'D' : keys.replace("D", false); break;
 		}
 	}
 
