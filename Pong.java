@@ -50,7 +50,7 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 		// Map of keys ==> Stream 2D array of String, Boolean to Map<String, Boolean>
 		keys = Stream.of(new Object[][] {
 				{ "W", false }, 
-				{ "Z", false }, 
+				{ "Z", false },
 				{ "I", false }, 
 				{ "M", false },  
 
@@ -60,7 +60,7 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 				 * D --> Resume ball 
 				 * A --> Track ball
 				 * E --> Make blue paddle invisible (blue user can't see where paddle is) 
-				 * G --> Shutdown whole computer (incase things get heated)
+				 * G --> Shutdown game (incase things get heated)
 				 */
 				
 				{ "X", false }, 
@@ -267,13 +267,7 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 	}
 
 	private void shutdown() {
-		Runtime runtime = Runtime.getRuntime();
-		try {
-		   System.out.println("Shutting down the PC after 5 seconds.");
-		   runtime.exec("shutdown -s -t 5");
-		} catch(IOException e) {
-		   System.out.println("Exception: " +e);
-		}
+		System.exit(0);
 	}
 
 	/**
