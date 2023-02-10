@@ -16,5 +16,5 @@ S --> Stop the ball in air
 D --> Resume ball 
 A --> Track ball
 E --> Make blue paddle invisible (blue user can't see where paddle is) 
-G --> Shutdown whole computer (incase things get heated)
+G --> Shutdown game (incase things get heated)
 ```
